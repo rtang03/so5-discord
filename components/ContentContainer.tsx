@@ -1,6 +1,6 @@
 import TopNavigation from './TopNavigation';
 import { BsPlusCircleFill } from 'react-icons/bs';
-// import { useState } from 'react';
+import Image from 'next/image';
 
 const ContentContainer = () => {
   return (
@@ -77,10 +77,12 @@ const Post = ({ name, timestamp, text }: any) => {
   return (
     <div className={'post'}>
       <div className="avatar-wrapper">
-        <img
+        <Image
           src={`https://avatars.dicebear.com/api/open-peeps/${seed}.svg`}
           alt=""
           className="avatar"
+          width={80}
+          height={80}
         />
       </div>
 

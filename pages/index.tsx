@@ -2,7 +2,7 @@ import ChannelBar from 'components/ChannelBar';
 import ContentContainer from 'components/ContentContainer';
 import SideBar from 'components/SideBar';
 
-export default () => {
+const Index = () => {
   return (
     <div className="flex">
       <SideBar />
@@ -11,3 +11,5 @@ export default () => {
     </div>
   );
 };
+
+export default Index;
