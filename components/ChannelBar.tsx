@@ -1,23 +1,11 @@
+import { hooks } from '../utils/connectors/metaMask';
 import { useState } from 'react';
 import { BsHash } from 'react-icons/bs';
 import { FaChevronDown, FaChevronRight, FaPlus } from 'react-icons/fa';
 
-const topics = ['tailwind-css', 'react'];
-const questions = ['jit-compilation', 'purge-files', 'dark-mode'];
-const random = ['variants', 'plugins'];
-
-const ChannelBar = () => {
-  return (
-    <div className="channel-bar shadow-lg">
-      <ChannelBlock />
-      <div className="channel-container">
-        <Dropdown header="Topics" selections={topics} />
-        <Dropdown header="Questions" selections={questions} />
-        <Dropdown header="Random" selections={random} />
-      </div>
-    </div>
-  );
-};
+const topics = ['draft', 'published'];
+const questions = ['followers', 'followings', 'trendings'];
+const random = ['listings', 'suggestions'];
 
 const Dropdown = ({ header, selections }: { header: string; selections: string[] }) => {
   const [expanded, setExpanded] = useState(true);
@@ -54,10 +42,26 @@ const TopicSelection = ({ selection }: { selection: string }) => (
   </div>
 );
 
-const ChannelBlock = () => (
+const ChannelBlock = ({ account }: { account: string }) => (
   <div className="channel-block">
-    <h5 className="channel-block-text">Channels</h5>
+    <h5 className="channel-block-text">{account}</h5>
   </div>
 );
+
+const ChannelBar = () => {
+  const { useAccounts } = hooks;
+  const accounts = useAccounts();
+
+  return (
+    <div className="channel-bar shadow-lg">
+      <ChannelBlock account={accounts?.[0]?.substring(0, 7) || 'Channel'} />
+      <div className="channel-container">
+        <Dropdown header="Topics" selections={topics} />
+        <Dropdown header="Community" selections={questions} />
+        <Dropdown header="NFT" selections={random} />
+      </div>
+    </div>
+  );
+};
 
 export default ChannelBar;

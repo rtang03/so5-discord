@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const ContentContainer = () => {
   return (
-    <div className="content-container">
+    <div className="content-container h-screen">
       <TopNavigation />
       <div className="content-list">
         <Post
@@ -91,7 +91,7 @@ const Post = ({ name, timestamp, text }: any) => {
           {name}
           <small className="timestamp">{timestamp}</small>
         </p>
-        <p className="post-text">{text}</p>
+        <p className="post-text prose dark:prose-invert">{text}</p>
       </div>
     </div>
   );
