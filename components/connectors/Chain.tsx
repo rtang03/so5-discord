@@ -8,7 +8,7 @@ const Chain = ({ chainId }: { chainId: ReturnType<Web3ReactHooks['useChainId']> 
 
   if (name) {
     return (
-      <div>
+      <div className="m-2">
         Chain:{' '}
         <b>
           {name} ({chainId})
@@ -18,7 +18,7 @@ const Chain = ({ chainId }: { chainId: ReturnType<Web3ReactHooks['useChainId']> 
   }
 
   return (
-    <div>
+    <div className="m-2">
       Chain Id: <b>{chainId}</b>
     </div>
   );

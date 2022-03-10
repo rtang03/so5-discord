@@ -46,43 +46,43 @@ export const getAddChainParameters = (chainId: number): AddEthereumChainParamete
 export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainInformation } = {
   1: {
     urls: [
-      process.env.infuraKey ? `https://mainnet.infura.io/v3/${process.env.infuraKey}` : undefined,
+      process.env.NEXT_PUBLIC_infuraKey ? `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}` : undefined,
       process.env.alchemyKey
         ? `https://eth-mainnet.alchemyapi.io/v2/${process.env.alchemyKey}`
         : undefined,
-      'https://cloudflare-eth.com',
+      // 'https://cloudflare-eth.com',
     ].filter((url) => url !== undefined) as string[],
     name: 'Mainnet',
   },
   3: {
     urls: [
-      process.env.infuraKey ? `https://ropsten.infura.io/v3/${process.env.infuraKey}` : undefined,
+      process.env.NEXT_PUBLIC_infuraKey ? `https://ropsten.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}` : undefined,
     ].filter((url) => url !== undefined) as string[],
     name: 'Ropsten',
   },
   4: {
     urls: [
-      process.env.infuraKey ? `https://rinkeby.infura.io/v3/${process.env.infuraKey}` : undefined,
+      process.env.NEXT_PUBLIC_infuraKey ? `https://rinkeby.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}` : undefined,
     ].filter((url) => url !== undefined) as string[],
     name: 'Rinkeby',
   },
   5: {
     urls: [
-      process.env.infuraKey ? `https://goerli.infura.io/v3/${process.env.infuraKey}` : undefined,
+      process.env.NEXT_PUBLIC_infuraKey ? `https://goerli.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}` : undefined,
     ].filter((url) => url !== undefined) as string[],
     name: 'Görli',
   },
   42: {
     urls: [
-      process.env.infuraKey ? `https://kovan.infura.io/v3/${process.env.infuraKey}` : undefined,
+      process.env.NEXT_PUBLIC_infuraKey ? `https://kovan.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}` : undefined,
     ].filter((url) => url !== undefined) as string[],
     name: 'Kovan',
   },
   // Optimism
   10: {
     urls: [
-      process.env.infuraKey
-        ? `https://optimism-mainnet.infura.io/v3/${process.env.infuraKey}`
+      process.env.NEXT_PUBLIC_infuraKey
+        ? `https://optimism-mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}`
         : undefined,
       'https://mainnet.optimism.io',
     ].filter((url) => url !== undefined) as string[],
@@ -92,8 +92,8 @@ export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainI
   },
   69: {
     urls: [
-      process.env.infuraKey
-        ? `https://optimism-kovan.infura.io/v3/${process.env.infuraKey}`
+      process.env.NEXT_PUBLIC_infuraKey
+        ? `https://optimism-kovan.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}`
         : undefined,
       'https://kovan.optimism.io',
     ].filter((url) => url !== undefined) as string[],
@@ -104,8 +104,8 @@ export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainI
   // Arbitrum
   42161: {
     urls: [
-      process.env.infuraKey
-        ? `https://arbitrum-mainnet.infura.io/v3/${process.env.infuraKey}`
+      process.env.NEXT_PUBLIC_infuraKey
+        ? `https://arbitrum-mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}`
         : undefined,
       'https://arb1.arbitrum.io/rpc',
     ].filter((url) => url !== undefined) as string[],
@@ -115,8 +115,8 @@ export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainI
   },
   421611: {
     urls: [
-      process.env.infuraKey
-        ? `https://arbitrum-rinkeby.infura.io/v3/${process.env.infuraKey}`
+      process.env.NEXT_PUBLIC_infuraKey
+        ? `https://arbitrum-rinkeby.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}`
         : undefined,
       'https://rinkeby.arbitrum.io/rpc',
     ].filter((url) => url !== undefined) as string[],
@@ -127,8 +127,8 @@ export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainI
   // Polygon
   137: {
     urls: [
-      process.env.infuraKey
-        ? `https://polygon-mainnet.infura.io/v3/${process.env.infuraKey}`
+      process.env.NEXT_PUBLIC_infuraKey
+        ? `https://polygon-mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}`
         : undefined,
       'https://polygon-rpc.com',
     ].filter((url) => url !== undefined) as string[],
@@ -138,8 +138,8 @@ export const CHAINS: { [chainId: number]: BasicChainInformation | ExtendedChainI
   },
   80001: {
     urls: [
-      process.env.infuraKey
-        ? `https://polygon-mumbai.infura.io/v3/${process.env.infuraKey}`
+      process.env.NEXT_PUBLIC_infuraKey
+        ? `https://polygon-mumbai.infura.io/v3/${process.env.NEXT_PUBLIC_infuraKey}`
         : undefined,
     ].filter((url) => url !== undefined) as string[],
     name: 'Polygon Mumbai',

@@ -4,10 +4,12 @@ const ConnectStatus = ({
   isActivating,
   error,
   isActive,
+  account,
 }: {
   isActivating: ReturnType<Web3ReactHooks['useIsActivating']>;
   error: ReturnType<Web3ReactHooks['useError']>;
   isActive: ReturnType<Web3ReactHooks['useIsActive']>;
+  account?: string;
 }) => {
   return (
     <div>
@@ -19,7 +21,7 @@ const ConnectStatus = ({
       ) : isActivating ? (
         <>🟡 Connecting</>
       ) : isActive ? (
-        <>🟢 Connected</>
+        <>🟢 Connected with {account}</>
       ) : (
         <>⚪️ Disconnected</>
       )}
