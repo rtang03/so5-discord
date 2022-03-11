@@ -1,4 +1,4 @@
-import { hooks } from '../utils/connectors/metaMask';
+import { hooks } from '../hooks';
 
 const Profile = () => {
   const { useAccounts, useProvider } = hooks;

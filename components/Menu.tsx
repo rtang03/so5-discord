@@ -1,4 +1,4 @@
-import { EditActiveIcon, EditInactiveIcon } from './svgIcons/EditIcon';
+import { EditActiveIcon, EditInactiveIcon } from '../hooks/useToggle';
 import { Menu, Transition } from '@headlessui/react';
 import { FaChevronDown } from 'react-icons/fa';
 import { Fragment } from 'react';

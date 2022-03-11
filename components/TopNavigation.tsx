@@ -1,5 +1,5 @@
-import useDarkMode from './useDarkMode';
-import SelectMetaMask from './connectors/SelectMetaMask';
+import ChooseWallet from './ChooseWallet';
+import useDarkMode from '../hooks/useDarkMode';
 import {
   FaSearch,
   FaHashtag,
@@ -154,7 +154,7 @@ const TopNavigation = () => {
                 </Dialog.Title>
 
                 {/* Using MetaMask */}
-                <SelectMetaMask />
+                <ChooseWallet />
 
                 {/* Close Button */}
                 <div className="mt-4">

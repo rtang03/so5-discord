@@ -1,4 +1,3 @@
-import { hooks } from '../utils/connectors/metaMask';
 import { useState } from 'react';
 import { BsHash } from 'react-icons/bs';
 import { FaChevronDown, FaChevronRight, FaPlus } from 'react-icons/fa';
@@ -49,12 +48,9 @@ const ChannelBlock = ({ account }: { account: string }) => (
 );
 
 const ChannelBar = () => {
-  const { useAccounts } = hooks;
-  const accounts = useAccounts();
-
   return (
     <div className="channel-bar shadow-lg">
-      <ChannelBlock account={accounts?.[0]?.substring(0, 7) || 'Channel'} />
+      <ChannelBlock account={'Channel'} />
       <div className="channel-container">
         <Dropdown header="Topics" selections={topics} />
         <Dropdown header="Community" selections={questions} />

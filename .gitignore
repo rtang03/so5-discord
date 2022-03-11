@@ -37,3 +37,4 @@ yarn-error.log*
 # secret
 .secret
 NOTES.md
+addresses.json
