@@ -38,3 +38,8 @@ yarn-error.log*
 .secret
 NOTES.md
 addresses.json
+public/images/hero-bg.png
+public/images/logo-bookmark-white.png
+public/images/illustration-features-tab-1.png
+public/images/illustration-features-tab-2.png
+public/images/illustration-features-tab-3.png

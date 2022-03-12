@@ -1,25 +1,28 @@
 import '../styles/globals.css';
 import Head from 'next/head';
-import { Web3ReactProvider } from '@web3-react/core';
-import { ethers } from 'ethers';
+import { MoralisProvider } from 'react-moralis';
 import type { AppProps } from 'next/app';
 
-const POLLING_INTERVAL = 12000;
+const APP_ID = process.env.NEXT_PUBLIC_MORALIS_APPLICATION_ID as string;
+const SERVER_URL = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL as string;
 
-const getLibrary = (provider: any) => {
-  const library = new ethers.providers.Web3Provider(provider);
-  library.pollingInterval = POLLING_INTERVAL;
-  return library;
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  const isServerInfo = APP_ID && SERVER_URL ? true : false;
+
+  if (!APP_ID || !SERVER_URL)
+    throw new Error(
+      'Missing Moralis Application ID or Server URL. Make sure to set your .env file.'
+    );
+
+  return (
+    <MoralisProvider serverUrl={SERVER_URL} appId={APP_ID}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>So5 Discord</title>
+      </Head>
+      <Component {...pageProps} />
+    </MoralisProvider>
+  );
 };
-
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <Web3ReactProvider getLibrary={getLibrary}>
-    <Head>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>So5 Discord</title>
-    </Head>
-    <Component {...pageProps} />
-  </Web3ReactProvider>
-);
 
 export default MyApp;

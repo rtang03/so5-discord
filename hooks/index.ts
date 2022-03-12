@@ -1,1 +1,1 @@
-export * from './useContract';
+export * from './useLensHub';

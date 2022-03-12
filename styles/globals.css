@@ -9,7 +9,20 @@
   padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
 @layer components {
+  .landing-btn {
+    @apply rounded-md py-3 px-6 shadow-md transition duration-300;
+  }
+  .landing-btn-purple {
+    @apply bg-bookmark-purple text-white;
+  }
+
+  .landing-btn-white {
+    @apply bg-bookmark-white;
+  }
+
   .connect-btn {
     @apply channel-block-text mx-4 rounded-lg border-2
   border-gray-600 px-4 text-base hover:bg-gray-700
